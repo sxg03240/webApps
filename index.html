@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main2.css">
+</head>
+<body>
+    <main>
+        <h1>Sales Tax Calculator</h1>
+        <p>Enter Subtotal and Tax Rate and click "Calculate".</p>
+        
+        <form id = "tax_calculator" name = "tax_calculator" onsubmit="return false">
+            <div>
+                <label text ="subTotal">Subtotal:</label>
+                <input type="text" inputmode="numeric" pattern="\d*" step="0.01"  id ="subTotal">
+            </div>
+
+            <div>
+                <label text ="taxRate">Tax Rate:</label>
+                <input type="text" inputmode="numeric" pattern="\d*" step="0.01"  id ="taxRate">
+
+            </div>
+
+            <div>
+                <label text ="salesTax">Sales Tax:</label>
+                <input type="text" inputmode="numeric" pattern="\d*" step="0.01"  id ="salesTax" value=""  read-only disabled>
+                
+            </div>
+            <div>
+                <label text ="total">Total:</label>
+                <input type="text" inputmode="numeric" pattern="\d*" step="0.01"  id ="total" value=""  read-only disabled>
+                
+            </div>
+
+            <label>&nbsp;</label>
+            <input type ="button" id = "calculate_list" value = "Calculate">
+        </form>
+    </main>
+    <script src = "calculate_list.js"></script>
+</body>
+</html>
+    
+</body>
+</html>

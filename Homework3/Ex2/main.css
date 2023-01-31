@@ -13,11 +13,13 @@ h2{
     font-size: 120%;
     padding: .25em 0 .25em 25px;
     cursor: pointer;
-    background: url(images/images/plus.png) no-repeat left center;
+    background: url(images/images/minus.png) no-repeat left center; 
+
 }
 
 h2.minus {
-    background: url(images/images/minus.png) no-repeat left center; 
+    background: url(images/images/plus.png) no-repeat left center;
+
 }
 
 a {

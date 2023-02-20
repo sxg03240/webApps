@@ -1,0 +1,76 @@
+td {
+    text-align: center;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 3.5px solid green;
+    position: relative;
+    top: 5cm;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
+}
+
+.leftTable {
+    position: absolute;
+    padding: 155px;
+    top: .5cm;
+    right: 550px;
+    width: 100px;
+    height: 120px;
+    border-spacing: 8px;
+}
+
+.rightTable {
+    position: absolute;
+    padding: 155px;
+    top: .5cm;
+    right: 55px;
+    width: 100px;
+    height: 120px;
+    border-spacing: 8px;
+}
+
+#absentees {
+    position: absolute;
+    color: red;
+    font-weight: bold;
+    font-family: "Calibri";
+    top: 15.5cm;
+    right: 560px;
+}
+
+h1 {
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
+    right: 435px;
+}
+
+.leftboard {
+    position: absolute;
+    margin-left: 55px;
+    margin-top: 110px;
+}
+
+.rightboard {
+    position: absolute;
+    margin-left: 797px;
+    margin-top: 110px;
+}
+
+.students {
+    position: absolute;
+    margin-left: 355px;
+    margin-top: 80px;
+    width: 35%;
+}
+
+#classroom {
+    margin-left: 65px;
+}
+
+.checked {
+    background-color: red;
+}

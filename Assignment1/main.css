@@ -1,76 +1,179 @@
-td {
+#heading {
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
+    text-align: center;
+    top: 1.5cm;
+    position: relative;
+
+}
+
+.leftBoard {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 110px;
+}
+
+.rightBoard {
+    position: absolute;
+    margin-left: 800px;
+    margin-top: 110px;
+}
+
+.students {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 80px;
+}
+
+#classroom {
+    margin-left: 125px;
+    width: 1190px;
+    height: 700px;
+    border: 2px solid blue;
+    position: absolute;
+    top: 2cm;
+    bottom: 30px;
+}
+
+
+#classStudents {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.firstRow {
+    flex: 1;
+    text-align: center;
+    margin-left: 120px;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 3.5px solid green;
+    position: relative;
+    top: 9cm;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
+    margin-top: 5px;
+}
+
+.secondRow {
+    flex: 2;
     text-align: center;
     margin-left: 30px;
     padding: 10px;
     background-color: lightgrey;
     border: 3.5px solid green;
     position: relative;
-    top: 5cm;
+    top: 9cm;
+    margin-top: 5px;
     color: black;
     font-weight: bold;
     font-family: "Calibri";
 }
 
-.leftTable {
-    position: absolute;
-    padding: 155px;
-    top: .5cm;
-    right: 550px;
-    width: 100px;
-    height: 120px;
-    border-spacing: 8px;
+.thirdRow {
+    flex: 3;
+    text-align: center;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 3.5px solid green;
+    position: relative;
+    top: 9cm;
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
 }
 
-.rightTable {
-    position: absolute;
-    padding: 155px;
-    top: .5cm;
-    right: 55px;
-    width: 100px;
-    height: 120px;
-    border-spacing: 8px;
+.fourthRow {
+    flex: 4;
+    text-align: center;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 3.5px solid green;
+    position: relative;
+    top: 9cm;
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
+}
+
+.fifthRow {
+    flex: 5;
+    text-align: center;
+    margin-left: 110px;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 3.5px solid green;
+    position: relative;
+    top: 9cm;
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
+}
+
+.sixthRow {
+    flex: 6;
+    text-align: center;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 3.5px solid green;
+    position: relative;
+    top: 9cm;
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
+}
+
+.seventhRow {
+    flex: 7;
+    text-align: center;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 3.5px solid green;
+    position: relative;
+    top: 9cm;
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
+}
+
+.eightRow {
+    flex: 8;
+    text-align: center;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 3.5px solid green;
+    position: relative;
+    top: 9cm;
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
+    font-family: "Calibri";
 }
 
 #absentees {
-    position: absolute;
+    position: relative;
     color: red;
     font-weight: bold;
     font-family: "Calibri";
-    top: 15.5cm;
-    right: 560px;
+    top: 15cm;
+    text-align: center;
 }
 
-h1 {
-    position: absolute;
-    color: black;
-    font-weight: bold;
-    font-family: "Calibri";
-    right: 435px;
-}
 
-.leftboard {
-    position: absolute;
-    margin-left: 55px;
-    margin-top: 110px;
-}
-
-.rightboard {
-    position: absolute;
-    margin-left: 797px;
-    margin-top: 110px;
-}
-
-.students {
-    position: absolute;
-    margin-left: 355px;
-    margin-top: 80px;
-    width: 35%;
-}
-
-#classroom {
-    margin-left: 65px;
-}
-
-.checked {
+div.checked {
     background-color: red;
 }

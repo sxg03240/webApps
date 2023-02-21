@@ -1,171 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Class Room Attendance</title>
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body id="attendance">
-        <div id="classroom" style="width:1150px; height:650px; border:2px solid blue;">
-            <main>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Class Room Attendance</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body id="attendance">
+    <div id="classroom">
+        <main>
+            <div id="heading">
                 <h1>Classroom Attendance App</h1>
-                <p id="absentees">
-                    number of students absent =
-                    <span id="noOfAbsentees"></span>
-                </p>
-                <img
-                    class="leftboard"
-                    src="images\whiteboard.PNG"
-                    alt="White Board left"
-                    width="300px"
-                    height="150px"
-                >
-                <img
-                    class="rightboard"
-                    src="images\whiteboard.PNG"
-                    alt="White Board right"
-                    width="300px"
-                    height="150px"
-                >
-                <img
-                    class="students"
-                    src="images/slideshow1.PNG"
-                    width="300px"
-                    height="200px"
-                >
-                <img
-                    class="students"
-                    src="images/slideshow2.PNG"
-                    width="300px"
-                    height="200px"
-                >
-                <img
-                    class="students"
-                    src="images/slideshow3.PNG"
-                    width="300px"
-                    height="200px"
-                >
-                <table class="leftTable" style="overflow-x:auto;">
-                    <tr>
-                        <td>
-                            Kumar
-                        </td>
-                        <td>
-                            Reddy
-                        </td>
-                        <td>
-                            Ajay
-                        </td>
-                        <td>
-                            Sandeep
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Teja
-                        </td>
-                        <td>
-                            Priya
-                        </td>
-                        <td>
-                            Kishore
-                        </td>
-                        <td>
-                            Yamini
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Deepika
-                        </td>
-                        <td>
-                            Hema
-                        </td>
-                        <td>
-                            Hima
-                        </td>
-                        <td>
-                            Chanakya
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Manideep
-                        </td>
-                        <td>
-                            Mohan
-                        </td>
-                        <td>
-                            Rohini
-                        </td>
-                        <td>
-                            Lakshmi
-                        </td>
-                    </tr>
-                </table>
-                <table class="rightTable" style="overflow-x:auto;">
-                    <tr>
-                        <td>
-                            Ruchitha
-                        </td>
-                        <td>
-                            Raju
-                        </td>
-                        <td>
-                            Divya
-                        </td>
-                        <td>
-                            Priyanka
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Uday
-                        </td>
-                        <td>
-                            Arun
-                        </td>
-                        <td>
-                            Mounica
-                        </td>
-                        <td>
-                            Deepa
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Ashok
-                        </td>
-                        <td>
-                            Vamsi
-                        </td>
-                        <td>
-                            Akhil
-                        </td>
-                        <td>
-                            Leela
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Reena
-                        </td>
-                        <td>
-                            Lekha
-                        </td>
-                        <td>
-                            pavani
-                        </td>
-                        <td>
-                            Shiva
-                        </td>
-                    </tr>
-                </table>
-            </main>
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="attendance.js"></script>
-        </div>
-    </body>
+            </div>
+            <div id="absentees">
+                Number of students absent =
+                <span id="noOfAbsentees"></span>
+            </div>
+            <div  >
+                <img class="leftBoard" src="images\whiteboard.PNG" alt="White
+                    Board left" width="300px" height="150px">
+            </div>
+            <div  >
+                <img class="rightBoard" src="images\whiteboard.PNG" alt="White
+                    Board right" width="300px" height="150px">
+            </div>
+            <div id="firstWindow">
+                <img class="students" alt="zoom slide1" src="images/slideshow1.PNG" width="400px" height="200px">
+            </div>
+            <div id="secondWindow">
+                <img class="students" alt="zoom slide2" src="images/slideshow2.PNG" width="400px" height="200px">
+            </div>
+            <div id="firstWindow">
+                <img class="students" alt="zoom slide3" src="images/slideshow3.PNG" width="400px" height="200px">
+            </div>
+            <div id="classStudents">
+
+                <div class="classStudents">
+                    <div class="firstRow">
+                        Kumar
+                    </div>
+                    <div class="firstRow">
+                        Teja
+                    </div>
+                    <div class="firstRow">
+                        Deepika
+                    </div>
+                    <div class="firstRow">
+                        Manideep
+                    </div>
+
+                </div>
+                <div class="classStudents">
+                    <div class="secondRow">
+                        Reddy
+                    </div>
+                    <div class="secondRow">
+                        Priya
+                    </div>
+                    <div class="secondRow">
+                        Hema
+                    </div>
+                    <div class="secondRow">
+                        Mohan
+                    </div>
+                </div>
+                <div class="classStudents">
+                    <div class="thirdRow">
+                        Ajay
+                    </div>
+                    <div class="thirdRow">
+                        Kishore
+                    </div>
+                    <div class="thirdRow">
+                        Hima
+                    </div>
+                    <div class="thirdRow">
+                        Rohini
+                    </div>
+                </div>
+                <div class="classStudents">
+                    <div class="fourthRow">
+                        Sandeep
+                    </div>
+                    <div class="fourthRow">
+                        Yamini
+                    </div>
+                    <div class="fourthRow">
+                        Chanakya
+                    </div>
+                    <div class="fourthRow">
+                        Lakshmi
+                    </div>
+                </div>
+
+                <div class="classStudents">
+                    <div class="fifthRow">
+                        Ruchitha
+                    </div>
+                    <div class="fifthRow">
+                        Uday
+                    </div>
+                    <div class="fifthRow">
+                        Ashok
+                    </div>
+                    <div class="fifthRow">
+                        Reena
+                    </div>
+                </div>
+                <div class="classStudents">
+                    <div class="sixthRow">
+                        Raju
+                    </div>
+                    <div class="sixthRow">
+                        Arun
+                    </div>
+                    <div class="sixthRow">
+                        Vamsi
+                    </div>
+                    <div class="sixthRow">
+                        Lekha
+                    </div>
+                </div>
+                <div class="classStudents">
+                    <div class="seventhRow">
+                        Divya
+                    </div>
+                    <div class="seventhRow">
+                        Mounica
+                    </div>
+                    <div class="seventhRow">
+                        Akhil
+                    </div>
+                    <div class="seventhRow">
+                        Pavani
+                    </div>
+                </div>
+                <div class="classStudents">
+                    <div class="eightRow">
+                        Priyanka
+                    </div>
+                    <div class="eightRow">
+                        Deepa
+                    </div>
+                    <div class="eightRow">
+                        Leela
+                    </div>
+                    <div class="eightRow">
+                        Shiva
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="attendance.js"></script>
+    </div>
+</body>
+
 </html>

@@ -1,0 +1,167 @@
+/* h2, h3, h4, h5, p, a {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+p {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.deckBtn {
+  transform: rotate(5deg);
+  font-family: sans-serif, cursive;
+  font-size: 32px;
+  -webkit-text-stroke: 1.5px #06116B;
+  background: url(images/green_mat.jpg);
+  -webkit-box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.6);
+}
+.deckBtn:hover {
+  transform: scale(1.025, 1.025) rotate(4deg);
+  cursor: pointer;
+} */
+/* .table {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url(images/green_mat.jpg);
+  background-size: 25%;
+} */
+.card {
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding: 80px;
+  margin: 15px;
+  margin-top: 60px;
+}
+.deal {
+  padding: 32px 24px;
+  border: 3px solid rgba(19, 25, 19, 0.45);
+  border-radius: 20px;
+  background-color: green;
+  width: 1200px;
+  height: 300px;
+  margin: 18px;
+}
+/* .deckTable {
+  padding: 32px 24px;
+  border: 7px solid rgba(19, 25, 19, 0.45);
+  border-radius: 40px;
+  background-color: green;
+  width: 1100px;
+  height: 300px;
+  margin: 18px;
+} */
+/* .infoPane {
+  position: absolute;
+  bottom: 32px;
+} */
+#border {
+  margin-left: 175px;
+  width: 1300px;
+  height: 950px;
+  border: 3px solid blue;
+  position: absolute;
+  top: 1cm;
+  bottom: 2cm;
+}
+h1.scoreText {
+  font-family: sans-serif;
+  color: #000000;
+  font-size: 38px;
+  margin: 30px;
+}
+.score {
+  font-family: sans-serif;
+  color: #000000;
+  font-size: 38px;
+}
+.bettingAmount {
+  margin: 25px;
+  position: absolute;
+}
+label {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+button#btn {
+  background-color: black;
+  position: absolute;
+  display: block;
+  width: 96.2%;
+  height: 48px;
+  border-radius: 9.5px;
+  top:11.2cm;
+  left:.5cm;
+  color: #f2f2f2;
+  font-weight: bold;
+  font-size: xx-large;
+  font-weight:1200;
+}
+
+button#reset {
+  background-color: rgb(226, 62, 89);
+  position: absolute;
+  display: block;
+  width: 9%;
+  height: 50px;
+  border-radius: 6px;
+  top:3.2cm;
+  left:30cm;
+  color: black;
+  font-weight:200;
+  font-size: x-large;
+  font-weight:200;
+}
+
+#points {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+
+}
+#points td, #points th {
+  padding: 8px;
+}
+#points tr:nth-child(even){background-color: #f2f2f2;}
+#points tr:hover {background-color: white;}
+#points th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: white;
+  color: black;
+  font-size: large;
+  font-weight: bold;
+}
+#points tr {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: white;
+  color: black;
+  font-size: medium;
+  font-weight:500;
+}
+table{
+  border-collapse: collapse;
+  width: 1000px;
+  height: 400px;
+  margin-left: 9cm;
+  right: 13.5cm;
+  top:15cm;
+  position: fixed;
+  table-layout: fixed;
+}

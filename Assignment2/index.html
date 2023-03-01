@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Poker Game</title>
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Limelight|Roboto" rel="stylesheet">
+  <script rel="text/javascript" src="poker.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="border">
+      <h1 class="scoreText">Score: <span class="score"></span></h1>
+      <div id="deals" class="decktable">
+        <div class="bettingAmount">
+          <label for="betAmount">Betting Amount:</label>
+          <input type="number" value="1">
+        </div>
+        <div id="deal" class="deal">
+          <span class="card"></span>
+          <span class="card"></span>
+          <span class="card"></span>
+          <span class="card"></span>
+          <span class="card"></span>
+        </div>
+        <button id="btn" type="button">
+          <nav href="#">Bet</nav>
+        </button>
+        <button id="reset" type="button">
+          <nav href="#">Reset</nav>
+        </button>
+      </div>
+      <table id="points">
+        <tr>
+          <th>Hand</th>
+          <th>Points</th>
+        </tr>
+        <tr>
+          <td>Royal Flush</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Four of a Kind</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Full House</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>Flush</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Straight</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Three of a Kind</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Two Pair</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Pair</td>
+          <td>1</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+  <template>
+    <span class="card"></span>
+  </template>
+</body>
+
+</html>

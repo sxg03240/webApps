@@ -16,8 +16,8 @@
       <h1 class="scoreText">Score: <span class="score"></span></h1>
       <div id="deals" class="decktable">
         <div class="bettingAmount">
-          <label for="betAmount">Betting Amount:</label>
-          <input type="number" value="1">
+          <label for="betAmount">Betting Amount: </label>
+          <input type="number" value="1" min="1" max="10">
         </div>
         <div id="deal" class="deal">
           <span class="card"></span>
@@ -33,44 +33,27 @@
           <nav href="#">Reset</nav>
         </button>
       </div>
-      <table id="points">
-        <tr>
-          <th>Hand</th>
-          <th>Points</th>
-        </tr>
-        <tr>
-          <td>Royal Flush</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>Four of a Kind</td>
-          <td>8</td>
-        </tr>
-        <tr>
-          <td>Full House</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <td>Flush</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>Straight</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>Three of a Kind</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>Two Pair</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Pair</td>
-          <td>1</td>
-        </tr>
-      </table>
+      <div class="points">
+        <div class="hand white heading">Hand</div>
+        <div class="hand white heading">Points</div>
+        <div class="hand grey">Royal Flush</div>
+        <div class="hand grey">10</div>
+        <div class="hand white">Four of a kind</div>
+        <div class="hand white">8</div>
+        <div class="hand grey">Full House</div>
+        <div class="hand grey">7</div>
+        <div class="hand white">Flush</div>
+        <div class="hand white">5</div>
+        <div class="hand grey">Straight</div>
+        <div class="hand grey">5</div>
+        <div class="hand white">Three of a Kind</div>
+        <div class="hand white">3</div>
+        <div class="hand grey">Two Pair</div>
+        <div class="hand grey">2</div>
+        <div class="hand white">Pair</div>
+        <div class="hand white">1</div>
+      </div>
+    </div>
     </div>
   </main>
   <template>

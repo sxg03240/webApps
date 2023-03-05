@@ -3,9 +3,8 @@ window.onload = () => {
   const deal = document.getElementById('deal');
   const result = document.getElementById('result');
   const bet = document.getElementById('btn');
-
   shuffleShowCheck();
-
+  //shuffle and show cards when load
   function shuffleShowCheck() {
     shuffle.length = 0;
     deal.innerHTML = "";
@@ -26,14 +25,14 @@ window.onload = () => {
     }
     showCards();
   }
-
-
+  //show cards
   function showCards() {
     const cardTemplate = document.getElementsByTagName('template')[0];
     const cardItem = cardTemplate.content.querySelector('.card');
     let a;
     for (let i = 0; i < shuffle.length; i++) {
       a = document.importNode(cardItem, true);
+      a.style.setProperty('--i', i); // set --i variable
       if (i < 2) {
         // Show the first two cards
         Object.assign(a.style, {
@@ -54,9 +53,7 @@ window.onload = () => {
       deal.appendChild(a);
     }
   }
-
-
-
+  //BET Button
   bet.onclick = () => {
     bet.value = "Bet"
     bet.innerHTML = "Next Game"
@@ -78,12 +75,12 @@ window.onload = () => {
     document.getElementById("balance").textContent = balance;
     document.getElementById("bet-amount").value = "";
   }
+  //Reset
   const resetButton = document.getElementById("reset");
   resetButton.addEventListener("click", function () {
     location.reload();
   });
-
-
+  //update score
   function updateScore() {
     let score = 0;
     // Calculate the score for the current hand

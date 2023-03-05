@@ -1,128 +1,101 @@
 window.onload = () => {
   let shuffle = [];
-  // const deck = document.getElementById('deck');
   const deal = document.getElementById('deal');
   const result = document.getElementById('result');
   const bet = document.getElementById('btn');
-
-  bet.onclick = () => {
-    bet.value = "Bet"
-    bet.innerHTML = "Next Game"
-  }
-
-  showCards()
-
-
-  deal.onclick = () => {
+  shuffleShowCheck();
+  function shuffleShowCheck() {
     shuffle.length = 0;
     deal.innerHTML = "";
-
-    for (let i = 0; shuffle.length < 5; i++) {
-      let card = {
+    const usedCards = new Set();
+    while (shuffle.length < 5) {
+      const card = {
         suit: String.fromCharCode(Math.floor(Math.random() * 4) + 97),
         num: Math.floor((Math.random() * 13) + 1)
       };
-      // Checking for duplicate cards
-      shuffle.length == 0 ? shuffle.push(card) :
-        shuffle.some((value, y, array) => array[y].num != card.num && array[y].suit != card.suit) ? shuffle.push(card) : console.log('Duplicate found. Starting over...');
-
+      // Check if the card is a duplicate
+      if (usedCards.has(`${card.num}-${card.suit}`)) {
+        console.log('Duplicate found. Starting over...');
+        continue;
+      }
+      // Add the card to the shuffle and the set of used cards
+      shuffle.push(card);
+      usedCards.add(`${card.num}-${card.suit}`);
     }
     showCards();
-    check();
   }
-
-  function showCards(){
+  function showCards() {
     const cardTemplate = document.getElementsByTagName('template')[0];
     const cardItem = cardTemplate.content.querySelector('span');
     let a;
     for (let i = 0; i < shuffle.length; i++) {
       a = document.importNode(cardItem, true);
-      deal.appendChild(a);
-      setTimeout(function timer() {
-        let deg = Math.random() * 1.5;
-        deg *= Math.floor(Math.random() * 2) == 1 ? 1 : -1;
-        Object.assign(deal.childNodes[i].style, {
-          backgroundImage: "url('images/cards/" + shuffle[i].suit + "/" + shuffle[i].num + ".png')",
-          transform: "rotate(" + deg + "deg)"
+      if (i < 2) {
+        // Show the first two cards
+        Object.assign(a.style, {
+          backgroundImage: "url('images/cards/"  + shuffle[i].num + ".png')",
+          visibility: "visible"
         });
-      }, i * 125);
-    }
-  }
-
-  const check = () => {
-    let flush, straight, hand;
-    let sameOfKind = 0;
-    let suits = shuffle.map(x => x.suit);
-    let nums = shuffle.map(x => x.num).sort((a, b) => { return a - b });
-
-    const checkFlush = (value, i, array) => {
-      return array[0] === value;
-    }
-    flush = suits.every(checkFlush);
-
-    const checkStraight = (value, i, array) => {
-      if (array[i] == array[i + 1] - 1 || array[i + 1] == null) {
-        return true;
       } else {
-        return false;
+        // Hide the remaining three cards
+        Object.assign(a.style, {
+          backgroundImage: "url('images/rearSideCard.jpg')",
+          visibility: "visible"
+        });
       }
-    }
-    straight = nums.every(checkStraight);
-
-    const checkSameOfKind = (array) => {
-      let ofKinds = [];
-      let x = 1;
-      while (x < 14) {
-        let count = 0;
-        for (let i = 0; i < array.length; i++) {
-          array[i] == x ? count++ : count = count;
-        }
-        if (count >= 2) {
-          let kind = { num: x, count: count }
-          ofKinds.push(kind);
-        }
-        x++;
-      }
-      ofKinds.forEach((element) => { sameOfKind += element.count * ofKinds.length; });
-    }
-    checkSameOfKind(nums);
-
-    flush === true && straight === true ? hand = "straight flush" :
-      sameOfKind == 4 ? hand = "four of a kind" :
-        sameOfKind == 10 ? hand = "full house" :
-          flush === true && straight === false ? hand = "flush" :
-            flush === false && straight === true ? hand = "straight" :
-              sameOfKind == 3 ? hand = "three of a kind" :
-                sameOfKind == 8 ? hand = "two pairs" :
-                  sameOfKind == 2 ? hand = "one pair" : hand = "none";
-
-    switch (hand) {
-      case "straight flush":
-        result.innerHTML = "It's a straight flush!";
-        break;
-      case "four of a kind":
-        result.innerHTML = "It's a four of a kind!";
-        break
-      case "full house":
-        result.innerHTML = "It's a full house!";
-        break
-      case "flush":
-        result.innerHTML = "It's a flush!";
-        break;
-      case "straight":
-        result.innerHTML = "It's a straight!";
-        break;
-      case "three of a kind":
-        result.innerHTML = "It's a three of a kind!";
-        break;
-      case "two pairs":
-        result.innerHTML = "It's two pairs";
-        break;
-      case "one pair":
-        result.innerHTML = "It's a pair!";
-        break;
-      default:
-        result.innerHTML = "You've got nothing.";
+      deal.appendChild(a);
     }
   }
-};
+
+    function updateScore() {
+    let score = 0;
+    // Calculate the score for the current hand
+    for (let i = 0; i < shuffle.length; i++) {
+      const card = shuffle[i];
+      if (card.num === 1) {
+        score += 11; // Ace
+      } else if (card.num >= 10) {
+        score += 10; // Face card or 10
+      } else {
+        score += card.num; // Number card
+      }
+    }
+    // Adjust the score if there is an Ace
+    for (let i = 0; i < shuffle.length; i++) {
+      if (shuffle[i].num === 1 && score > 21) {
+        score -= 10;
+      }
+    }
+    // Update the score in the heading
+    document.getElementById("score").textContent = "Score: " + score;
+  }
+
+
+  bet.onclick = () => {
+    bet.value = "Bet"
+    bet.innerHTML = "Next Game"
+    // Get the bet amount from the input field
+    const betAmount = parseInt(document.getElementById("bet-amount").value);
+    // Validate the bet amount
+    if (isNaN(betAmount) || betAmount < 1 || betAmount > 10) {
+      alert("Please enter a valid bet amount between 1 and 10.");
+      return;
+    }
+    // Show the remaining three cards
+    for (let i = 2; i < shuffle.length; i++) {
+      const cardElement = deal.childNodes[i];
+      cardElement.style.backgroundImage = "url('images/cards/" + shuffle[i].num + ".png')";
+    }
+    // Update the score
+    updateScore();
+
+    // Update the player's balance and clear the bet input field
+    balance -= betAmount;
+    document.getElementById("balance").textContent = balance;
+    document.getElementById("bet-amount").value = "";
+  }
+  const resetButton = document.getElementById("reset");
+  resetButton.addEventListener("click", function () {
+    location.reload();
+  });
+}

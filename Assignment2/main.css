@@ -172,3 +172,7 @@ button#reset {
   font-weight: bold;
   text-indent: 10px;
 }
+
+.highlight {
+  background-color: yellow;
+}

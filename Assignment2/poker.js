@@ -3,7 +3,9 @@ window.onload = () => {
   const deal = document.getElementById('deal');
   const result = document.getElementById('result');
   const bet = document.getElementById('btn');
+
   shuffleShowCheck();
+
   function shuffleShowCheck() {
     shuffle.length = 0;
     deal.innerHTML = "";
@@ -24,30 +26,65 @@ window.onload = () => {
     }
     showCards();
   }
+
+
   function showCards() {
     const cardTemplate = document.getElementsByTagName('template')[0];
-    const cardItem = cardTemplate.content.querySelector('span');
+    const cardItem = cardTemplate.content.querySelector('.card');
     let a;
     for (let i = 0; i < shuffle.length; i++) {
       a = document.importNode(cardItem, true);
       if (i < 2) {
         // Show the first two cards
         Object.assign(a.style, {
-          backgroundImage: "url('images/cards/"  + shuffle[i].num + ".png')",
-          visibility: "visible"
+          backgroundImage: `url('images/cards/${shuffle[i].num}.png')`,
+          visibility: 'visible',
+          left: `${i * 150}px`,
+          animationDelay: `${0.5 * i}s`
         });
       } else {
         // Hide the remaining three cards
         Object.assign(a.style, {
           backgroundImage: "url('images/rearSideCard.jpg')",
-          visibility: "visible"
+          visibility: "visible",
+          left: `${i * 150 - 300}px`,
+          animationDelay: `${0.9 * i}s`
         });
       }
       deal.appendChild(a);
     }
   }
 
-    function updateScore() {
+
+
+  bet.onclick = () => {
+    bet.value = "Bet"
+    bet.innerHTML = "Next Game"
+    // Get the bet amount from the input field
+    const betAmount = parseInt(document.getElementById("bet-amount").value);
+    // Validate the bet amount
+    if (isNaN(betAmount) || betAmount < 1 || betAmount > 10) {
+      alert("Please enter a valid bet amount between 1 and 10.");
+      return;
+    }
+    // Show the remaining three cards
+    for (let i = 2; i < shuffle.length; i++) {
+      const cardElement = deal.childNodes[i];
+      cardElement.style.backgroundImage = `url('images/cards/${shuffle[i].num}.png')`;
+    }
+    updateScore();
+    // Update the player's balance and clear the bet input field
+    balance -= betAmount;
+    document.getElementById("balance").textContent = balance;
+    document.getElementById("bet-amount").value = "";
+  }
+  const resetButton = document.getElementById("reset");
+  resetButton.addEventListener("click", function () {
+    location.reload();
+  });
+
+
+  function updateScore() {
     let score = 0;
     // Calculate the score for the current hand
     for (let i = 0; i < shuffle.length; i++) {
@@ -69,33 +106,4 @@ window.onload = () => {
     // Update the score in the heading
     document.getElementById("score").textContent = "Score: " + score;
   }
-
-
-  bet.onclick = () => {
-    bet.value = "Bet"
-    bet.innerHTML = "Next Game"
-    // Get the bet amount from the input field
-    const betAmount = parseInt(document.getElementById("bet-amount").value);
-    // Validate the bet amount
-    if (isNaN(betAmount) || betAmount < 1 || betAmount > 10) {
-      alert("Please enter a valid bet amount between 1 and 10.");
-      return;
-    }
-    // Show the remaining three cards
-    for (let i = 2; i < shuffle.length; i++) {
-      const cardElement = deal.childNodes[i];
-      cardElement.style.backgroundImage = "url('images/cards/" + shuffle[i].num + ".png')";
-    }
-    // Update the score
-    updateScore();
-
-    // Update the player's balance and clear the bet input field
-    balance -= betAmount;
-    document.getElementById("balance").textContent = balance;
-    document.getElementById("bet-amount").value = "";
-  }
-  const resetButton = document.getElementById("reset");
-  resetButton.addEventListener("click", function () {
-    location.reload();
-  });
 }

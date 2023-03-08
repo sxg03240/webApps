@@ -2,25 +2,34 @@
   width: 20px;
   height: 10px;
   display: inline-block;
+  background-image: url('images/card_back.jpg');
+  background-size: cover;
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
   padding: 60px;
   margin: 30px;
   margin-top: 80px;
-  transform: translate(5%, 5%);
-  transition: all 0.5s ease-out;
-  animation: slide-in 0.5s ease-out;
-  animation-delay: calc(var(--i) * 0.5s);
+  animation: slide-in 1.2s ease-out;
+  transition: transform 1s ease-in-out;
 }
+
 @keyframes slide-in {
   0% {
-    transform: translate(-400%, 150%);
+    margin-left: -100px;
+    opacity: 0;
   }
+
   100% {
-    transform: translate(5%, 5%);
+    margin-left: 30px;
+    opacity: 1;
   }
 }
+
+.flipping {
+  transform: rotateY(360deg);
+}
+
 .deal {
   padding: 32px 24px;
   border: 3px solid rgba(19, 25, 19, 0.45);
@@ -30,6 +39,7 @@
   height: 300px;
   margin: 18px;
 }
+
 #border {
   margin-left: 175px;
   width: 1100px;
@@ -39,28 +49,34 @@
   top: 1cm;
   bottom: 2cm;
 }
+
 h1.scoreText {
   font-family: sans-serif;
   color: #000000;
   font-size: 38px;
   margin: 30px;
 }
+
 .score {
   font-family: sans-serif;
   color: #000000;
   font-size: 38px;
 }
+
 .bettingAmount {
   margin: 25px;
   position: absolute;
 }
+
 label {
   font-size: 20px;
   font-family: sans-serif;
 }
+
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
 }
+
 input[type=number] {
   border-radius: 5px;
   border-color: gray;
@@ -71,6 +87,7 @@ input[type=number] {
   border: none;
   left: 3.8cm;
 }
+
 button#btn {
   background-color: black;
   position: absolute;
@@ -86,6 +103,7 @@ button#btn {
   font-weight: 1200;
   border-color: #000000;
 }
+
 button#reset {
   background-color: rgb(195, 104, 119);
   position: absolute;
@@ -101,6 +119,7 @@ button#reset {
   font-weight: 200;
   border-color: black;
 }
+
 .points {
   display: grid;
   grid-template-columns: 2fr 2fr;
@@ -111,12 +130,15 @@ button#reset {
   padding: 40px 25px;
   align-items: start;
 }
+
 .white {
   background-color: white;
 }
+
 .grey {
   background-color: rgb(241, 235, 235);
 }
+
 .hand {
   display: flex;
   font-size: large;
@@ -126,10 +148,12 @@ button#reset {
   text-decoration: solid;
   align-items: center;
 }
+
 .heading {
   font-weight: bold;
   text-indent: 10px;
 }
+
 .highlight {
   background-color: yellow;
 }

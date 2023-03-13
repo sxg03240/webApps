@@ -154,6 +154,6 @@ button#reset {
   text-indent: 10px;
 }
 
-.highlight,.highlight-pair,.highlight-two-pair,.highlight-three-kind,.highlight-straight-flush,.highlight-full-house,.highlight-four-kind, .highlight-royal-flush{
+.highlight-pair,.highlight-two-pair,.highlight-three-kind,.highlight-straight,.highlight-straight-flush,.highlight-full-house,.highlight-four-kind, .highlight-royal-flush{
   background-color: yellow;
 }

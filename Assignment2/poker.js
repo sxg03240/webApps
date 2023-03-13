@@ -1,18 +1,28 @@
 import { cards } from './data.js'
-
 window.onload = () => {
-
   let shuffle = []
-
   const deal = document.getElementById('deal')
   const bet = document.getElementById('btn')
   document.getElementById("score").textContent = "Score: 100";
   const resetButton = document.getElementById("reset");
   const scoreElement = document.getElementById("score");
-
-
+  const highlightpair = 'highlight-pair'
+  const highlighttwopair = 'highlight-two-pair'
+  const highlightthreekind = 'highlight-three-kind'
+  const highlightflush = 'highlight-straight-flush'
+  const highlightstraight = 'highlight-straight'
+  const highlightfullhouse = 'highlight-full-house'
+  const highlightfourkind = 'highlight-four-kind'
+  const highlightroyalflush = 'highlight-royal-flush'
+  const royalflush = 'hand grey royalflush'
+  const fourkind = 'hand white fourkind'
+  const fullhouse = 'hand grey fullhouse'
+  const flush = 'hand white flush'
+  const straight = 'hand grey straight'
+  const threekind = 'hand white threekind'
+  const twopair = 'hand grey twopair'
+  const pair = 'hand white pair'
   shuffleShowCheck()
-
   function shuffleShowCheck() {
     shuffle.length = 0
     deal.innerHTML = ""
@@ -31,8 +41,6 @@ window.onload = () => {
     }
     showCards()
   }
-
-
   function showCards() {
     const cardTemplate = document.getElementsByTagName('template')[0]
     const cardItem = cardTemplate.content.querySelector('.card')
@@ -53,8 +61,6 @@ window.onload = () => {
       deal.appendChild(a)
     }
   }
-
-
   let isNextGame = false;
   bet.onclick = () => {
     if (isNextGame) {
@@ -88,36 +94,76 @@ window.onload = () => {
         newScore = score - betAmount;
       }
       scoreElement.textContent = `Score: ${newScore}`
-
-      let pointClass = '';
-      if (points === 1) {
-        pointClass = 'highlight-pair';
-      } else if (points === 2) {
-        pointClass = 'highlight-two-pair';
-      } else if (points === 3) {
-        pointClass = 'highlight-three-kind';
-      } else if (points === 5) {
-        pointClass = 'highlight-straight-flush';
-      } else if (points === 7) {
-        pointClass = 'highlight-full-house';
-      } else if (points === 8) {
-        pointClass = 'highlight-four-kind';
-      } else if (points === 10) {
-        pointClass = 'highlight-royal-flush';
-      }
-
-      const pointDivs = document.querySelectorAll('.points > .hand');
+      const pointDivs = document.querySelectorAll('.points > .hand')
       pointDivs.forEach(div => {
-        if (parseInt(div.innerHTML) === points) {
-          div.classList.add(pointClass);
-        } else if (div.classList.contains(pointClass)) {
-          div.classList.remove(pointClass);
+        if (div.className === royalflush && parseInt(div.innerHTML) === points) {
+          const royalflushes = document.querySelectorAll('.royalflush');
+          royalflushes.forEach(royalflushing => {
+            royalflushing.classList.add(highlightroyalflush);
+            setTimeout(() => {
+              pair.classList.remove(highlightroyalflush);
+            }, 2500);
+          });
+        } if (div.className === fourkind && parseInt(div.innerHTML) === points) {
+          const fourpairs = document.querySelectorAll('.fourkind');
+          fourpairs.forEach(fourpair => {
+            fourpair.classList.add(highlightfourkind);
+            setTimeout(() => {
+              pair.classList.remove(highlightfourkind);
+            }, 2500);
+          });
+        } if (div.className === fullhouse && parseInt(div.innerHTML) === points) {
+          const fullhouses = document.querySelectorAll('.fullhouse');
+          fullhouses.forEach(house => {
+            house.classList.add(highlightfullhouse);
+            setTimeout(() => {
+              pair.classList.remove(highlightfullhouse);
+            }, 2500);
+          });
+        } if (div.className === flush && parseInt(div.innerHTML) === points && div.innerHTML === 'Flush') {
+          const flushes = document.querySelectorAll('.flush');
+          flushes.forEach(flushing => {
+            flushing.classList.add(highlightstraight);
+            setTimeout(() => {
+              pair.classList.remove(highlightstraight);
+            }, 2500);
+          });
+        } if (div.className === straight && parseInt(div.innerHTML) === points && div.innerHTML === 'Straight') {
+          const straights = document.querySelectorAll('.straight');
+          straights.forEach(straighting => {
+            straighting.classList.add(highlightflush);
+            setTimeout(() => {
+              pair.classList.remove(highlightflush);
+            }, 2500);
+          });
+        } if (div.className === threekind && parseInt(div.innerHTML) === points) {
+          const threepairs = document.querySelectorAll('.threekind');
+          threepairs.forEach(threepair => {
+            threepair.classList.add(highlightthreekind);
+            setTimeout(() => {
+              pair.classList.remove(highlightthreekind);
+            }, 2500);
+          });
+        } if (div.className === twopair && parseInt(div.innerHTML) === points) {
+          const twopairs = document.querySelectorAll('.twopair');
+          twopairs.forEach(twopairing => {
+            twopairing.classList.add(highlighttwopair);
+            setTimeout(() => {
+              pair.classList.remove(highlighttwopair);
+            }, 2500);
+          });
+        } if (div.className === pair && parseInt(div.innerHTML) === points) {
+          const pairs = document.querySelectorAll('.pair');
+          pairs.forEach(pair => {
+            pair.classList.add(highlightpair);
+            setTimeout(() => {
+              pair.classList.remove(highlightpair);
+            }, 2500);
+          });
         }
       })
-
     }
   }
-
   function calculatePoints(cards) {
     // Check for Royal Flush
     let isRoyalFlush = true
@@ -130,74 +176,58 @@ window.onload = () => {
     if (isRoyalFlush && isSameSuit(cards)) {
       return 10
     }
-
     // Check for Straight Flush
     if (isStraight(cards) && isSameSuit(cards)) {
       return 9
     }
-
     // Check for Four of a Kind
     if (isSameValue(cards, 4)) {
       return 8
     }
-
     // Check for Full House
     if (isSameValue(cards, 3) && isTwoPair(cards)) {
       return 7
     }
-
     // Check for Flush
     if (isSameSuit(cards)) {
       return 5
     }
-
     // Check for Straight
     if (isStraight(cards)) {
-      return 6
+      return 5
     }
-
     // Check for Three of a Kind
     if (isSameValue(cards, 3)) {
       return 3
     }
-
     // Check for Two Pair
     if (isTwoPair(cards)) {
       return 2
     }
-
     // Check for Pair
     if (isSameValue(cards, 2)) {
       return 1
     }
-
     // No matches, return 0
     return 0
-
-
   }
-
   function isSameSuit(cards) {
     const suit = cards[0].suit
     return cards.every(card => card.suit === suit)
   }
-
   function isStraight(cards) {
     // Check for Ace low straight
     if (cards[0].num === 1 && cards[1].num === 10 && cards[2].num === 11 && cards[3].num === 12 && cards[4].num === 13) {
       return true
     }
-
     // Check for other straights
     for (let i = 0; i < cards.length - 1; i++) {
       if (cards[i].num !== cards[i + 1].num - 1) {
         return false
       }
     }
-
     return true
   }
-
   function isSameValue(cards, count) {
     for (let i = 0; i < cards.length; i++) {
       let matches = 1
@@ -212,7 +242,6 @@ window.onload = () => {
     }
     return false
   }
-
   function isTwoPair(cards) {
     let pairCount = 0
     for (let i = 0; i < cards.length; i++) {
@@ -228,10 +257,8 @@ window.onload = () => {
     }
     return pairCount === 2
   }
-
   resetButton.addEventListener("click", function () {
     document.getElementById("score").textContent = "Score: 100";
     location.reload();
   })
-
 }

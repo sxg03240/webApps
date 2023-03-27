@@ -1,4 +1,3 @@
-import { cards } from './data.js'
 window.onload = () => {
   let shuffle = []
   const deal = document.getElementById('deal')
@@ -101,7 +100,7 @@ window.onload = () => {
           royalflushes.forEach(royalflushing => {
             royalflushing.classList.add(highlightroyalflush);
             setTimeout(() => {
-              pair.classList.remove(highlightroyalflush);
+              royalflushing.classList.remove(highlightroyalflush);
             }, 2500);
           });
         } if (div.className === fourkind && parseInt(div.innerHTML) === points) {
@@ -109,7 +108,7 @@ window.onload = () => {
           fourpairs.forEach(fourpair => {
             fourpair.classList.add(highlightfourkind);
             setTimeout(() => {
-              pair.classList.remove(highlightfourkind);
+              fourpair.classList.remove(highlightfourkind);
             }, 2500);
           });
         } if (div.className === fullhouse && parseInt(div.innerHTML) === points) {
@@ -117,7 +116,7 @@ window.onload = () => {
           fullhouses.forEach(house => {
             house.classList.add(highlightfullhouse);
             setTimeout(() => {
-              pair.classList.remove(highlightfullhouse);
+              house.classList.remove(highlightfullhouse);
             }, 2500);
           });
         } if (div.className === flush && parseInt(div.innerHTML) === points && div.innerHTML === 'Flush') {
@@ -125,7 +124,7 @@ window.onload = () => {
           flushes.forEach(flushing => {
             flushing.classList.add(highlightstraight);
             setTimeout(() => {
-              pair.classList.remove(highlightstraight);
+              flushing.classList.remove(highlightstraight);
             }, 2500);
           });
         } if (div.className === straight && parseInt(div.innerHTML) === points && div.innerHTML === 'Straight') {
@@ -133,7 +132,7 @@ window.onload = () => {
           straights.forEach(straighting => {
             straighting.classList.add(highlightflush);
             setTimeout(() => {
-              pair.classList.remove(highlightflush);
+              straighting.classList.remove(highlightflush);
             }, 2500);
           });
         } if (div.className === threekind && parseInt(div.innerHTML) === points) {
@@ -141,7 +140,7 @@ window.onload = () => {
           threepairs.forEach(threepair => {
             threepair.classList.add(highlightthreekind);
             setTimeout(() => {
-              pair.classList.remove(highlightthreekind);
+              threepair.classList.remove(highlightthreekind);
             }, 2500);
           });
         } if (div.className === twopair && parseInt(div.innerHTML) === points) {
@@ -149,8 +148,8 @@ window.onload = () => {
           twopairs.forEach(twopairing => {
             twopairing.classList.add(highlighttwopair);
             setTimeout(() => {
-              pair.classList.remove(highlighttwopair);
-            }, 2500);
+              twopairing.classList.remove(highlighttwopair);
+            }, 3500);
           });
         } if (div.className === pair && parseInt(div.innerHTML) === points) {
           const pairs = document.querySelectorAll('.pair');
@@ -158,7 +157,7 @@ window.onload = () => {
             pair.classList.add(highlightpair);
             setTimeout(() => {
               pair.classList.remove(highlightpair);
-            }, 2500);
+            }, 3500);
           });
         }
       })

@@ -1,0 +1,117 @@
+body {
+    background: white;
+}
+
+img {
+    width: 256px;
+    height: 340px;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 60px 0px 0px 50px;
+    columns: 300px 2;
+}
+
+.items li {
+    display: inline-block;
+    margin: 50px 0px 0px 25px;
+
+}
+
+.media-picture {
+    float: left;
+    width: 460px;
+}
+
+.media-details {
+    float: left;
+    width: 460px;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table th {
+    padding-right: 40px;
+}
+
+input {
+    background-color: white;
+    height: 24px;
+    border-radius: 5px;
+    border-color: darkgray;
+
+}
+
+select {
+    height: 24px;
+    border-radius: 5px;
+    border-color: grey;
+}
+
+
+/* Style the select element */
+#books select {
+
+    height: 24px;
+    border-radius: 5px;
+    border-color: grey;
+    padding: 0 20px 0 10px;
+    background-color: white;
+
+
+}       
+
+
+
+
+/* Add custom arrow icons using pseudo-elements */
+#books select::-ms-expand {
+    display: none;
+}
+
+#books select::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #555 transparent;
+    cursor: pointer;
+}
+
+#books select::-ms-value {
+    color: #222;
+    background-color: transparent;
+}
+
+#books select:hover::after {
+    border-top-color: #999;
+}
+
+#books::-webkit-inner-spin-button,
+#books::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    animation-iteration-count: infinite;
+}
+
+#books::-webkit-inner-spin-button {
+    background-color: blue;
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+
+#books::-webkit-outer-spin-button {
+    background-color: blue;
+    display: block;
+    width: 14px;
+    height: 14px;
+}

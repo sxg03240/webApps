@@ -1,5 +1,5 @@
 body {
-    background: white;
+    background: rgb(223, 220, 220);
 }
 
 img {
@@ -15,7 +15,7 @@ img {
 
 .items li {
     display: inline-block;
-    margin: 50px 0px 0px 25px;
+    margin: 30px 0px 0px 110px;
 
 }
 
@@ -39,79 +39,31 @@ table th {
 }
 
 input {
-    background-color: white;
-    height: 24px;
-    border-radius: 5px;
-    border-color: darkgray;
-
-}
-
-select {
-    height: 24px;
-    border-radius: 5px;
-    border-color: grey;
+    background-color: rgb(255, 252, 252);
+    height: 25px;
+    border-radius: 10px;
+    border-color:rgb(255, 252, 252);
+    padding: 5px 8px 3px 11px;
+    font-size: 14px;
 }
 
 
-/* Style the select element */
+
+h1 {
+    margin-left: 150px;
+    margin-top: 120px;
+}
+
+#books {
+    margin-left: 150px;
+}
+
+
 #books select {
-
-    height: 24px;
-    border-radius: 5px;
-    border-color: grey;
-    padding: 0 20px 0 10px;
-    background-color: white;
-
-
-}       
-
-
-
-
-/* Add custom arrow icons using pseudo-elements */
-#books select::-ms-expand {
-    display: none;
-}
-
-#books select::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    margin-top: -3px;
-    border-width: 6px 6px 0 6px;
-    border-style: solid;
-    border-color: #555 transparent;
-    cursor: pointer;
-}
-
-#books select::-ms-value {
-    color: #222;
-    background-color: transparent;
-}
-
-#books select:hover::after {
-    border-top-color: #999;
-}
-
-#books::-webkit-inner-spin-button,
-#books::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    animation-iteration-count: infinite;
-}
-
-#books::-webkit-inner-spin-button {
-    background-color: blue;
-    display: block;
-    width: 14px;
-    height: 14px;
-}
-
-#books::-webkit-outer-spin-button {
-    background-color: blue;
-    display: block;
-    width: 14px;
-    height: 14px;
-}
+    background-size: 10px;
+    padding: 5px 5px 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+    color: #333;
+  }

@@ -8,7 +8,6 @@ if(isset($_GET["id"])) {
         $item = $catalog[$id];
 
     }
-   
 }
 
 ?>

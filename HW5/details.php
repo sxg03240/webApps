@@ -1,12 +1,9 @@
 <?php
-
 include "include/data.php";
-
 if(isset($_GET["id"])) {
-    $id = $_GET["id"];
+   $id = $_GET["id"];
     if (isset($catalog[$id])){
         $item = $catalog[$id];
-
     }
 }
 

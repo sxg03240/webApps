@@ -5,6 +5,7 @@ body {
 img {
     width: 256px;
     height: 340px;
+    
 }
 
 .wrapper {
@@ -15,7 +16,7 @@ img {
 
 .items li {
     display: inline-block;
-    margin: 30px 0px 0px 110px;
+    margin: 30px 0px 0px 60px;
 
 }
 
@@ -41,21 +42,21 @@ table th {
 input {
     background-color: rgb(255, 252, 252);
     height: 25px;
-    border-radius: 10px;
+    border-radius: 7px;
     border-color:rgb(255, 252, 252);
     padding: 5px 8px 3px 11px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
 
 h1 {
-    margin-left: 150px;
-    margin-top: 120px;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 #books {
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 
@@ -63,7 +64,7 @@ h1 {
     background-size: 10px;
     padding: 5px 5px 5px 10px;
     border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 16px;
+    border-radius: 5px;
+    font-size: 13px;
     color: #333;
   }

@@ -1,18 +1,9 @@
 <?php
-
-
-function get_item_html($id, $item){
-
-    $output = "<li><a href = 'details.php?id="
-               . $id
-               . "'><img src='"
-               .$item["img"]
-               ." ' alt = '"
-               .$item["title"]
-               ."'>"
-               ."</li>";
-
-
-               return $output;
-}
+ function get_item_html($item) {
+    $output = "<li><a href='details.php?id=" . $item["id"] . "'>";
+    $output .= "<img src='" . $item["img"] . "' alt='" . $item["title"] . "'>";
+    $output .= "</a></li>";
+    return $output;
+  }
+  
 ?>

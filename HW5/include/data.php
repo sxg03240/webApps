@@ -56,4 +56,3 @@ $catalog[3] = [
     "publisher" => "Manning Publications",
     "isbn" => "978-020789990"
 ];
-?>

@@ -6,3 +6,16 @@ $(document).ready(function() {
         window.location.href = 'table.php?id=' + dept_id;
     });
 });
+
+
+
+$(document).ready(function() {
+  $('.table').DataTable();
+});
+
+  
+
+
+
+
+
